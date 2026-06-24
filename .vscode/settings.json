@@ -1,0 +1,54 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.requireConfig": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    ".env*": "dotenv"
+  },
+  
+  // 1. Color for Clickable Links
+  "workbench.colorCustomizations": {
+    "editorLink.foreground": "#4fc3f7" // Light blue color for clickable URLs
+  },
+
+  // 2. Token Colors for .env Files
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "variable.other.env",
+        "settings": {
+          "foreground": "#F07178", 
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "keyword.operator.assignment.env",
+        "settings": {
+          "foreground": "#89DDFF"
+        }
+      },
+      {
+        "scope": "string.quoted.double.env",
+        "settings": {
+          "foreground": "#C3E88D" // Green for quoted passwords/keys (e.g. "my_password")
+        }
+      },
+      {
+        "scope": "string.quoted.single.env",
+        "settings": {
+          "foreground": "#C3E88D" // Green for single-quoted values
+        }
+      },
+      {
+        "scope": "source.env",
+        "settings": {
+          "foreground": "#FFCB6B" // Amber/Yellow for unquoted links & values (like your MONGODB_URI)
+        }
+      }
+    ]
+  }
+}

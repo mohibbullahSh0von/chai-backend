@@ -1,15 +1,12 @@
-const asyncHandler = (requestHandler)=>{
-    (req, res, next)=>{
-         Promise.resolve(requestHandler(req, res, next)).catch(error=>next(error))
-    }
-}
+const asyncHandler = (requestHandler) => {
+  (req, res, next) => {
+    Promise.resolve(requestHandler(req, res, next)).catch((error) =>
+      next(error)
+    );
+  };
+};
 
-
-export {asyncHandler}
-
-
-
-
+export { asyncHandler };
 
 //This is a higher order function which accepts function and use that in an async function
 // tryCatch varient
@@ -21,7 +18,7 @@ export {asyncHandler}
 //            res.status(error.code || 500).json({
 //             success: false,
 //             message: err.message
-//            }) 
+//            })
 //         }
 //     }
 // }
